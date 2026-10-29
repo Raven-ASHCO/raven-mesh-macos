@@ -11,7 +11,7 @@ small helper app that runs Apple's CoreBluetooth for `raven-node`, and how to bu
 - **Off in every build.** Bluetooth nearby is held by a gate in the code
   (`NEARBY_PRODUCTION_ENABLED = false` in raven-core) until its release record
   (`core/docs/WAIVER_NEARBY_DRAFT.md`, unsigned) is signed after the hardware test rows
-  (`core/docs/PHYSICAL_NEARBY_LAPTOPS.md`, N1-N12), which have not been run yet. In a release
+  (rows N1-N12, run from an unpublished test checklist), which have not been run yet. In a release
   build `raven nearby status` says "held in this build" and nothing touches Bluetooth.
 - **Developers can try it** in debug builds with lab switches, on test profiles only (see "Try it"
   below).
@@ -94,7 +94,7 @@ scripts/check.sh
 It checks that the Info.plist matches raven-core's, then runs the helper's tests and raven-node's
 macOS backend tests from `core/node`. No Bluetooth is used, and the tests use throwaway profiles with
 file-backed test stores (never the Keychain or `~/.raven`). Real-radio tests are the hardware rows
-in `core/docs/PHYSICAL_NEARBY_LAPTOPS.md`.
+N1-N12 (an unpublished test checklist).
 
 ## Try it (developers, lab only)
 
@@ -113,5 +113,6 @@ can see.
 
 ## License
 
-GNU Affero General Public License v3.0 (`LICENSE`). Security issues: please write to
+Copyright (C) 2026 ASHCO. GNU Affero General Public License v3.0 (`LICENSE`; notice and pending
+additional terms in `NOTICE`). Security issues: please write to
 security@raven-messager.com (`SECURITY.md`), not a public issue.
